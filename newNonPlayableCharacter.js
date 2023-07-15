@@ -58,9 +58,11 @@ function newNonPlayableCharacter(x, y) {
     }
 }
 
-function sleep(time) {
-    return new Promise(resolve => {
-        setTimeout(resolve, time)
-    })
-
+async function sleep(time) {
+    await setTimeout(resolve, time)
+    await walkEast()
+    await stop()
+    
 }
+
+sleep(time)
